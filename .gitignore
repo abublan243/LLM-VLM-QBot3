@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# ML model weights (too large for GitHub — see models/README.md)
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Runtime data
+logs/
+mission_reports/
+config/object_memory.json
+config/settings.json
+
+# IDE / Editor
+.vscode/
+.idea/
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Graduation report (separate from codebase)
+report_v2/
+report_v2.zip
+reports/
+report_gen/
+
+# Miscellaneous (not part of source code)
+linkedin post/
+pic/
+md_updates/
+programs/
+*.zip
