@@ -1,0 +1,49 @@
+# QBot3 Host-Side Control System — Python 3.11+
+# Install:  pip install -r requirements.txt
+#
+# === Native DDS (NOT a pip package — install via apt) ===
+# rclpy and the ROS2 message packages (sensor_msgs, std_msgs, nav_msgs,
+# geometry_msgs, kobuki_ros_interfaces) come from the system ROS2 install.
+# Match the Pi's distro (Foxy on Ubuntu 20.04). Source the setup.bash before
+# launching:
+#     source /opt/ros/foxy/setup.bash
+#     export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+#     export ROS_DOMAIN_ID=<same as Pi>
+#
+# Apt packages required on the host:
+#     ros-foxy-rclpy
+#     ros-foxy-cv-bridge
+#     ros-foxy-rmw-cyclonedds-cpp
+#     ros-foxy-sensor-msgs ros-foxy-std-msgs ros-foxy-nav-msgs ros-foxy-geometry-msgs
+#     ros-foxy-kobuki-ros-interfaces  (or build from source)
+
+# ===== GUI =====
+PyQt6>=6.7.1
+qasync>=0.27.1
+pyqtgraph>=0.13.7
+matplotlib>=3.9.2
+
+# ===== Computer vision =====
+opencv-python>=4.9.0.80
+numpy>=1.26.4,<2.0       # pinned <2.0 for open3d / ultralytics compatibility
+Pillow>=10.4.0
+
+# ===== AI / ML =====
+ultralytics>=8.3.40      # YOLOv11 + YOLO-World (open-vocab)
+open3d>=0.19.0
+torch>=2.4.1             # ultralytics backend
+torchvision>=0.19.1
+
+# ===== LLM / VLM APIs =====
+openai>=1.51.2
+google-generativeai>=0.8.3
+
+# ===== Voice I/O (optional) =====
+# sounddevice wraps PortAudio. On Linux: `sudo apt install libportaudio2`.
+# If sounddevice is not installed the voice mic + TTS gracefully disable.
+sounddevice>=0.4.7
+
+# ===== Utilities =====
+PyYAML>=6.0.2
+psutil>=6.0.0            # CPU/GPU/memory metrics for performance panel
+python-dotenv>=1.0.1     # optional .env loading
