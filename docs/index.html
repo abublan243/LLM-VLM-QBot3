@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM-VLM-QBot3 | Autonomous Robot</title>
+    <meta name="description" content="QBot3 — VLA-Powered Autonomous Inspection & Assistance Robot">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">QBot3 <span class="accent">AI</span></div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="https://github.com/abublan243/LLM-VLM-QBot3" target="_blank" class="btn btn-outline">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content fade-up">
+            <div class="badges">
+                <span class="badge">ROS2 Foxy</span>
+                <span class="badge">YOLOv11</span>
+                <span class="badge">GPT-4o</span>
+            </div>
+            <h1>Autonomous Inspection <br>& <span class="accent">Assistance Robot</span></h1>
+            <p>An AI-driven robotics platform combining Vision-Language-Action (VLA) models with ROS2 for intelligent, autonomous mobile robot operation.</p>
+            <div class="hero-buttons">
+                <a href="https://github.com/abublan243/LLM-VLM-QBot3" class="btn btn-primary">View Source Code</a>
+                <a href="#features" class="btn btn-secondary">Explore Features</a>
+            </div>
+        </div>
+        <div class="hero-image fade-up delay-1">
+            <img src="images/hardware/qbot3_side.jpg" alt="QBot3 Robot Side View">
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="section-header fade-up">
+            <h2>Core <span class="accent">Features</span></h2>
+            <p>Production-grade desktop control with a full AI perception-to-action pipeline.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card fade-up">
+                <div class="icon">🧠</div>
+                <h3>AI Pipeline</h3>
+                <p>YOLOv11 detection → VLM scene analysis → LLM planning → precise motor actions. VLM/LLM support for OpenAI GPT-4o and Google Gemini 1.5.</p>
+            </div>
+            <div class="feature-card fade-up delay-1">
+                <div class="icon">🛠️</div>
+                <h3>16 Autonomous Skills</h3>
+                <p>Wall following, object search/approach, room mapping, reading gauges, return-to-base, VLM reach, and more, all executing asynchronously.</p>
+            </div>
+            <div class="feature-card fade-up delay-2">
+                <div class="icon">💻</div>
+                <h3>Real-time Dashboard</h3>
+                <p>PyQt6 interface featuring live RGB/depth/SLAM cameras, dynamic sensor plots, AI thought reasoning panel, and visual block programming.</p>
+            </div>
+            <div class="feature-card fade-up">
+                <div class="icon">🎙️</div>
+                <h3>Voice I/O</h3>
+                <p>Speech-to-text commanding and text-to-speech feedback using OpenAI Whisper and TTS-1, enabling natural conversation.</p>
+            </div>
+            <div class="feature-card fade-up delay-1">
+                <div class="icon">🗺️</div>
+                <h3>Object Memory</h3>
+                <p>Persistent spatial memory. The robot remembers the 3D coordinates of objects it detects during SLAM exploration.</p>
+            </div>
+            <div class="feature-card fade-up delay-2">
+                <div class="icon">📄</div>
+                <h3>Mission Reports</h3>
+                <p>Auto-generated LaTeX PDF reports for every completed task, complete with trajectory maps and latency analytics.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="section bg-darker">
+        <div class="section-header fade-up">
+            <h2>System <span class="accent">Architecture</span></h2>
+            <p>A distributed system bridging a Raspberry Pi 4, a powerful Host PC, and Cloud APIs.</p>
+        </div>
+        <div class="arch-container fade-up">
+            <img src="images/diagrams/system_overview.png" alt="System Architecture Diagram" class="arch-img box-shadow">
+        </div>
+        <div class="arch-details">
+            <div class="arch-box fade-up">
+                <h4>Tier 1: Raspberry Pi</h4>
+                <p>Ubuntu 20.04 + ROS2 Foxy. Handles hardware interfacing (QBot3 base, RealSense camera, encoders, IMU).</p>
+            </div>
+            <div class="arch-box fade-up delay-1">
+                <h4>Tier 2: Host Workstation</h4>
+                <p>Python 3.11 + PyQt6. Runs the YOLO detector, SLAM grid, skill library, GUI, and communicates via Cyclone DDS.</p>
+            </div>
+            <div class="arch-box fade-up delay-2">
+                <h4>Tier 3: Cloud APIs</h4>
+                <p>Handles heavy inference tasks using GPT-4o, Gemini 1.5, and Whisper, with fallback to local-only mode.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard & Pipeline Section -->
+    <section id="dashboard" class="section">
+        <div class="section-header fade-up">
+            <h2>AI Pipeline in <span class="accent">Action</span></h2>
+            <p>A look into the QBot3's perception and control interface.</p>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item fade-up">
+                <img src="images/gui/gui_ai_mode.png" alt="AI Mode Dashboard" class="box-shadow">
+                <div class="caption"><strong>AI Mode Dashboard</strong> — Live camera feeds, SLAM map, active sensor monitoring, and the AI thought progression panel.</div>
+            </div>
+            
+            <div class="gallery-split">
+                <div class="gallery-item fade-up">
+                    <img src="images/gui/gui_rgb_yolo.png" alt="YOLO Detection View" class="box-shadow">
+                    <div class="caption"><strong>YOLOv11 Detection</strong> — Real-time bounding boxes with depth estimation overlaid.</div>
+                </div>
+                <div class="gallery-item fade-up delay-1">
+                    <img src="images/gui/gui_slam.png" alt="SLAM Map" class="box-shadow">
+                    <div class="caption"><strong>SLAM Navigation Map</strong> — 2D occupancy grid with path trail and persistent object memory.</div>
+                </div>
+            </div>
+
+            <div class="gallery-item fade-up">
+                <img src="images/diagrams/skill_diagram_new.png" alt="Skills Diagram" class="box-shadow">
+                <div class="caption"><strong>Skills Architecture</strong> — Hierarchical delegation of asynchronous robot behaviors.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">QBot3 <span class="accent">Project</span></div>
+            <p>Developed as a Senior Project Design in the Mechatronics Engineering Department at the <strong>University of Jordan</strong>.</p>
+            <div class="social-links">
+                <a href="https://github.com/abublan243/LLM-VLM-QBot3" target="_blank">GitHub Repository</a>
+            </div>
+            <p class="copyright">© 2026 QBot3 Team. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
