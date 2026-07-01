@@ -1,0 +1,85 @@
+approach_object:
+  stop_distance_m: 0.2999999999999998
+  alignment_gain: 0.003
+  approach_speed_mps: 0.15
+  lost_target_timeout_s: 2.0
+  alignment_deadband_px: 25
+  turn_only_threshold_px: 60
+  alignment_smoothing: 0.7
+  max_angular_radps: 0.6
+  min_confidence: 0.35
+  slow_radius_m: 0.6
+  min_approach_speed_mps: 0.04
+go_to_position:
+  tolerance_m: 0.15
+  use_precise_cmd: true
+  max_legs: 12
+go_to_object:
+  stop_distance_m: 0.5
+  face_target: true
+  tolerance_m: 0.15
+line_follower:
+  speed_mps: 0.12
+  line_color_hsv_lower:
+  - 0
+  - 0
+  - 0
+  line_color_hsv_upper:
+  - 180
+  - 255
+  - 60
+  camera_region_y_pct: 70
+  steering_gain: 0.004
+map_room:
+  coverage_threshold_pct: 80
+  speed_mps: 0.15
+  spacing_m: 0.4
+read_gauge:
+  approach_distance_m: 0.6
+  crop_padding_px: 40
+  vlm_prompt: "You are reading an industrial gauge, dial, or meter from a robot's\
+    \ camera.\nLook at the cropped image and return ONLY a JSON object of the form:\n\
+    \  {\"value\": <number>, \"units\": \"<string>\", \"confidence\": <0-1>}\nNo prose,\
+    \ no markdown, no other keys."
+return_to_base:
+  position_tolerance_m: 0.15
+  angle_tolerance_deg: 5.0
+  approach_speed_mps: 0.15
+search_object:
+  rotation_speed_radps: 0.6
+  step_angle_deg: 30
+  confidence_threshold: 0.5
+  max_full_rotations: 2
+seek_object:
+  approach_speed_mps: 0.12
+  min_confidence: 0.30
+  max_distance_m: 3.0
+  max_duration_s: 30.0
+  min_obstacle_distance_m: 0.30
+  bearing_hint: center
+sequential_approach:
+  stop_distance_m: 0.5
+  per_target_timeout_s: 60
+wall_follower:
+  target_distance_m: 0.25
+  speed_mps: 0.15
+  wall_side: right
+  kp: 1.5
+  kd: 0.4
+  depth_column_width_px: 80
+explore_room:
+  max_iterations: 8
+  max_duration_s: 120.0
+  min_confidence: 0.30
+  scan_after_arrival: true
+  scan_half_deg: 60.0
+  leg_tolerance_m: 0.25
+  min_goal_distance_m: 0.5
+  max_goal_distance_m: 4.0
+vlm_reach:
+  stop_distance_m: 0.50
+  max_iterations: 4
+  max_duration_s: 90.0
+  success_confidence: 0.55
+  leg_tolerance_m: 0.20
+  viewpoint_snap_m: 0.40

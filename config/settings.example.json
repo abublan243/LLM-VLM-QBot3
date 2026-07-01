@@ -1,0 +1,129 @@
+{
+  "robot": {
+    "robot_model": "qbot3",
+    "ros_domain_id": 0,
+    "rmw_implementation": "rmw_cyclonedds_cpp",
+    "node_name": "qbot3_host"
+  },
+  "topics": {
+    "cmd_vel": "/qbot3/cmd_vel",
+    "precise_cmd": "/qbot3/precise_cmd",
+    "imu": "/qbot3/imu",
+    "encoders": "/qbot3/encoders",
+    "battery": "/qbot3/battery_state",
+    "bumpers": "/qbot3/bumpers",
+    "cliff": "/qbot3/cliff",
+    "wheel_drop": "/qbot3/wheel_drop",
+    "diagnostics": "/diagnostics",
+    "odom": "/qbot3/odom",
+    "camera_color": "/camera/color/compressed",
+    "camera_depth_visual": "/camera/depth/visual",
+    "camera_depth_raw": "/camera/depth/raw",
+    "camera_info": "/camera/color/camera_info",
+    "motion_feedback": "/motion/feedback",
+    "motion_result": "/motion/result",
+    "motion_status": "/motion/status",
+    "odom_reset": "/qbot3/odom/reset",
+    "imu_calibrated": "/qbot3/imu/calibrated",
+    "imu_calibration_progress": "/qbot3/imu/calibration_progress",
+    "imu_reset_yaw": "/qbot3/imu/reset_yaw",
+    "imu_skip_calibration": "/qbot3/imu/skip_calibration"
+  },
+  "api_keys": {
+    "openai": "YOUR_OPENAI_API_KEY",
+    "google": "YOUR_GOOGLE_API_KEY"
+  },
+  "ai_defaults": {
+    "llm_model": "gpt-4o-mini",
+    "vlm_model": "gpt-4o",
+    "execution_type": "high_level",
+    "yolo_model": "yolo11l.pt",
+    "yolo_confidence": 0.45,
+    "yolo_continuous_hz": 3.0,
+    "llm_temperature": 0.2,
+    "llm_max_tokens": 1024,
+    "vlm_max_tokens": 1024,
+    "context_history_actions": 5
+  },
+  "yolo_world": {
+    "enabled": true,
+    "weights": "yolov8s-world.pt",
+    "confidence": 0.2,
+    "class_prefix": "yw_",
+    "classes": [
+      "person",
+      "soldier",
+      "helmet",
+      "tactical helmet",
+      "gun",
+      "pistol",
+      "handgun",
+      "rifle",
+      "assault rifle",
+      "knife",
+      "weapon",
+      "backpack",
+      "body armor",
+      "grenade"
+    ]
+  },
+  "voice": {
+    "stt_model": "whisper-1",
+    "tts_model": "tts-1",
+    "tts_voice": "nova",
+    "language": null,
+    "speak_responses": false,
+    "speak_section": "next_observation",
+    "max_speak_chars": 240
+  },
+  "reports": {
+    "auto_generate": true,
+    "output_folder": "mission_reports"
+  },
+  "safety": {
+    "max_linear_speed": 0.3,
+    "max_angular_speed": 1.5,
+    "min_battery_percent": 12,
+    "low_battery_speed_factor": 0.5,
+    "obstacle_stop_distance_m": 0.2,
+    "cliff_escape_distance_m": 0.15,
+    "command_timeout_s": 0.5
+  },
+  "calibration": {
+    "ticks_per_meter": 2578.0,
+    "wheel_base_m": 0.235,
+    "battery_full_voltage": 12.6,
+    "battery_empty_voltage": 10.5,
+    "camera_height_m": 0.1,
+    "camera_pitch_deg": 0.0,
+    "obstacle_min_height_m": 0.15,
+    "obstacle_max_height_m": 1.8,
+    "distance_source": "right",
+    "enable_gyro_calibration": true,
+    "gyro_calibration_duration_s": 5.0
+  },
+  "ui": {
+    "theme": "dark",
+    "camera_display_fps": 30,
+    "plot_history_seconds": 60,
+    "default_mode": "ai",
+    "window_min_width": 1280,
+    "window_min_height": 720,
+    "window_default_width": 1920,
+    "window_default_height": 1080
+  },
+  "simulation": {
+    "enable_when_disconnected": true,
+    "synthetic_camera_fps": 30,
+    "synthetic_imu_hz": 50
+  },
+  "performance": {
+    "monitor_interval_ms": 500
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "logs/qbot3_control.log",
+    "max_file_size_mb": 10,
+    "backup_count": 5
+  }
+}
